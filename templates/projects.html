@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects - My Portfolio{% endblock %}
+
+{% block content %}
+<h1>Featured Projects</h1>
+<div class="projects">
+    <div class="project">
+        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" alt="Project 1" class="project-image">
+        <h2>E-commerce Platform</h2>
+        <p>A modern e-commerce solution built with React and Node.js. Features include user authentication, product management, real-time inventory tracking, and secure payment processing with Stripe integration.</p>
+    </div>
+    <div class="project">
+        <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg" alt="Project 2" class="project-image">
+        <h2>Task Management App</h2>
+        <p>A collaborative task management application with real-time updates, team workflows, and progress tracking.</p>
+    </div>
+    <div class="project">
+        <img src="https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg" alt="Project 3" class="project-image">
+        <h2>Data Analytics Dashboard</h2>
+        <p>Interactive dashboard for visualizing complex data sets using D3.js and Python backend for data processing.</p>
+    </div>
+</div>
+{% endblock %}
