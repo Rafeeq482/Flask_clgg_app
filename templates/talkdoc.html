@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}TalkDoc - Project Details{% endblock %}
+
+{% block content %}
+<h1>TalkDoc - Medical Chatbot</h1>
+<img src="{{ url_for('static', filename='images/talkdoc.png') }}" alt="TalkDoc" class="project-image">
+<p>
+    TalkDoc is an AI-powered medical chatbot designed to assist users with basic healthcare needs. It can provide symptom checking, health suggestions, and general wellness information. The chatbot uses speech recognition, natural language processing, and is built with Python and Flask.
+</p>
+<a href="{{ url_for('projects') }}">← Back to Projects</a>
+{% endblock %}

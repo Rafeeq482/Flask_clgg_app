@@ -6,19 +6,25 @@
 <h1>Featured Projects</h1>
 <div class="projects">
     <div class="project">
-        <img src="{{ url_for('static', filename='images/talkdoc.png') }}" alt="My Project" class="project-image">
-        <h2>TalkDoc</h2>
-        <p>TalkDoc is a medical chatbot. Medical chatbots are artificial intelligence-powered virtual assistants that are designed to assist users in managing their healthcare needs.</p>
+        <a href="{{ url_for('talkdoc') }}">
+            <img src="{{ url_for('static', filename='images/talkdoc.png') }}" alt="TalkDoc" class="project-image">
+            <h2>TalkDoc</h2>
+            <p>TalkDoc is a medical chatbot. Medical chatbots are AI-powered assistants designed to help users manage healthcare needs.</p>
+        </a>
     </div>
     <div class="project">
-        <img src="{{ url_for('static', filename='images/enc-dec.webp') }}" alt="My Project" class="project-image">
-        <h2>Encryptor/Decryptor</h2>
-        <p>Both encrypters and decrypters play vital roles in various aspects of modern technology, including secure communication, data storage, and information security.</p>
+        <a href="{{ url_for('encryptor') }}">
+            <img src="{{ url_for('static', filename='images/enc-dec.webp') }}" alt="Encryptor/Decryptor" class="project-image">
+            <h2>Encryptor/Decryptor</h2>
+            <p>These tools are vital for secure communication, data storage, and information security.</p>
+        </a>
     </div>
     <div class="project">
-        <img src="{{ url_for('static', filename='images/malware.jpeg') }}" alt="My Project" class="project-image">
-        <h2>Malware Detector</h2>
-        <p>Malware analysis tools are essential software applications and systems used by cybersecurity professionals, researchers, and organizations to dissect and understand malicious software, or malware. </p>
+        <a href="{{ url_for('malware') }}">
+            <img src="{{ url_for('static', filename='images/malware.jpeg') }}" alt="Malware Detector" class="project-image">
+            <h2>Malware Detector</h2>
+            <p>Used by cybersecurity pros to understand and analyze malicious software.</p>
+        </a>
     </div>
 </div>
 {% endblock %}
