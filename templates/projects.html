@@ -6,19 +6,19 @@
 <h1>Featured Projects</h1>
 <div class="projects">
     <div class="project">
-        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" alt="Project 1" class="project-image">
-        <h2>E-commerce Platform</h2>
-        <p>A modern e-commerce solution built with React and Node.js. Features include user authentication, product management, real-time inventory tracking, and secure payment processing with Stripe integration.</p>
+        <img src="{{ url_for('static', filename='images/talkdoc.png') }}" alt="My Project" class="project-image">
+        <h2>TalkDoc</h2>
+        <p>TalkDoc is a medical chatbot. Medical chatbots are artificial intelligence-powered virtual assistants that are designed to assist users in managing their healthcare needs.</p>
     </div>
     <div class="project">
-        <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg" alt="Project 2" class="project-image">
-        <h2>Task Management App</h2>
-        <p>A collaborative task management application with real-time updates, team workflows, and progress tracking.</p>
+        <img src="{{ url_for('static', filename='images/enc-dec.webp') }}" alt="My Project" class="project-image">
+        <h2>Encryptor/Decryptor</h2>
+        <p>Both encrypters and decrypters play vital roles in various aspects of modern technology, including secure communication, data storage, and information security.</p>
     </div>
     <div class="project">
-        <img src="https://images.pexels.com/photos/3183132/pexels-photo-3183132.jpeg" alt="Project 3" class="project-image">
-        <h2>Data Analytics Dashboard</h2>
-        <p>Interactive dashboard for visualizing complex data sets using D3.js and Python backend for data processing.</p>
+        <img src="{{ url_for('static', filename='images/malware.jpeg') }}" alt="My Project" class="project-image">
+        <h2>Malware Detector</h2>
+        <p>Malware analysis tools are essential software applications and systems used by cybersecurity professionals, researchers, and organizations to dissect and understand malicious software, or malware. </p>
     </div>
 </div>
 {% endblock %}
