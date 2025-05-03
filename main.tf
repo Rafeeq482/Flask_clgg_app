@@ -6,14 +6,8 @@ provider "aws" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key"
-  public_key = file("terrakey-ec2.pub")
+  public_key = file("flaskappkey.pub")
 }
-
-resource "aws_key_pair" "new_key" {
-  key_name   = "demokey"
-  public_key = file("terrakey-ec2.pub")
-}
-
 
 
 #vpc
@@ -57,7 +51,30 @@ resource "aws_instance" "my_instance" {
   key_name        = aws_key_pair.deployer.key_name
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.my_security_group.name]
-  user_data       = file("app.sh")
+  user_data = <<-EOF
+    #!/bin/bash
+    exec > /var/log/startup.log 2>&1
+    set -x
+
+    # Wait a bit for network to be ready
+    sleep 10
+
+    sudo apt update -y
+    sudo apt install -y python3-pip git
+
+    # Clone repo
+    git clone https://github.com/Rafeeq482/Flask_clgg_app.git /home/ubuntu/Flask_clgg_app
+
+    # Navigate into the repo
+    cd /home/ubuntu/Flask_clgg_app || exit 1
+      sudo pip3 install -r requirements.txt
+      sudo apt install python3-flask -y
+
+    # Run the app on port 80
+    sudo nohup python3 main.py --host=0.0.0.0 --port=80 > output.log 2>&1 &
+  EOF
+
+
 
   root_block_device {
     volume_size           = 8
@@ -65,6 +82,6 @@ resource "aws_instance" "my_instance" {
     volume_type           = "gp3"
   }
   tags = {
-    Name = "Flask_college project"
+    Name = "Flask_clgg_app"
   }
 }
