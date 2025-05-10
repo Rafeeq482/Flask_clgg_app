@@ -5,8 +5,145 @@
 {% block content %}
 <h1>Encryptor / Decryptor Tool</h1>
 <img src="{{ url_for('static', filename='images/enc-dec.webp') }}" alt="Encryptor" class="project-image">
+
+<h2>Overview</h2>
 <p>
-    This tool provides a simple yet secure way to encrypt and decrypt messages using custom algorithms. Ideal for learning cryptography concepts, it's implemented in Python and provides a user-friendly interface for encoding confidential messages.
+The Encryptor/Decryptor Tool is a Python-based application designed to demonstrate key cryptographic principles. It enables secure encryption and decryption of messages using various algorithms. Built with modular architecture, this project is ideal for learning the foundations of information security, secure communication, and data protection.
 </p>
-<a href="{{ url_for('projects') }}">← Back to Projects</a>
+
+<h2>Project Objectives</h2>
+<ul>
+  <li><strong>Confidentiality:</strong> Transform plaintext into secure ciphertext to prevent unauthorized access.</li>
+  <li><strong>Integrity:</strong> Ensure the data has not been altered in transit or storage.</li>
+  <li><strong>Authentication:</strong> Support verification of sender identity and message authenticity.</li>
+  <li><strong>Recovery:</strong> Allow authorized decryption of ciphertext to restore original information.</li>
+</ul>
+
+<h2>Modules</h2>
+<ul>
+  <li><strong>Encryption Module:</strong> Supports multiple algorithms such as AES, RSA, and Blowfish with secure key generation and encryption logic.</li>
+  <li><strong>Decryption Module:</strong> Converts ciphertext back into plaintext using proper key management and algorithm matching.</li>
+  <li><strong>Key Management Module:</strong> Manages secure key generation, storage, and exchange procedures.</li>
+  <li><strong>UI Module:</strong> Provides a simple user interface for message entry and encryption/decryption actions.</li>
+  <li><strong>File Handling:</strong> Enables file-level encryption for broader data security applications.</li>
+</ul>
+
+<h2>Tools & Technologies</h2>
+<ul>
+  <li><strong>Language:</strong> Python 3</li>
+  <li><strong>IDEs:</strong> PyCharm, Visual Studio, Eclipse</li>
+  <li><strong>Libraries:</strong> PyCryptodome, OpenSSL, Bouncy Castle (for Java/C# ports)</li>
+  <li><strong>Testing:</strong> Pytest for unit testing and reliability checks</li>
+  <li><strong>Virtualization:</strong> Docker, VirtualBox for cross-platform testing</li>
+</ul>
+
+<h2>System Requirements</h2>
+<ul>
+  <li><strong>Processor:</strong> Dual Core or better</li>
+  <li><strong>RAM:</strong> Minimum 1GB</li>
+  <li><strong>Storage:</strong> At least 500MB free</li>
+  <li><strong>OS:</strong> Windows, Linux, or macOS</li>
+</ul>
+
+<h2>Security Features</h2>
+<ul>
+  <li>Secure key storage and retrieval systems</li>
+  <li>Robust algorithms supporting modern encryption standards</li>
+  <li>Support for non-repudiation and message integrity checks</li>
+</ul>
+
+<h2>Future Scope</h2>
+<p>Encryption is constantly evolving. Future directions for this project include:</p>
+<ul>
+  <li><strong>Post-Quantum Cryptography:</strong> Adoption of quantum-resistant algorithms like lattice-based and code-based encryption.</li>
+  <li><strong>Homomorphic Encryption:</strong> Enable computations on encrypted data without exposing its contents.</li>
+  <li><strong>Multi-Party Computation (MPC):</strong> Allow secure collaborative processing of data across multiple parties.</li>
+  <li><strong>Secure Hardware Enclaves:</strong> Integrate trusted execution environments for sensitive cryptographic operations.</li>
+  <li><strong>Blockchain Integration:</strong> Use distributed ledgers for key management and data verification.</li>
+</ul>
+
+<h2>Team & Acknowledgments</h2>
+<p>
+Project developed by Harshit Rai, Mohd Rafeeq, Sachin Kumar, and Roshni Sharma under the guidance of Ms. Rinki Bhati. We thank Aravali College of Engineering and Management for infrastructure and support.
+</p>
+
+<h2>References</h2>
+<ul>
+  <li><a href="https://crypto.stanford.edu/~dabo/cryptobook/">A Graduate Course in Applied Cryptography – Boneh & Shoup</a></li>
+  <li><a href="https://learnpython.org/">Learn Python</a></li>
+  <li>Books: Core Python Programming (R. Nageswara Rao), Cryptography Engineering (Schneier et al.), Introduction to Modern Cryptography (Katz & Lindell)</li>
+</ul>
+
+<a href="{{ url_for('projects') }}" class="back-button">← Back to Projects</a>
+
+<style>
+    .project-detail-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .project-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+    
+    .project-section {
+        margin-bottom: 3rem;
+    }
+    
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .category-card {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #2c3e50;
+    }
+    
+    .tech-stack {
+        display: flex;
+        gap: 2rem;
+        margin: 1.5rem 0;
+    }
+    
+    .tech-item {
+        text-align: center;
+    }
+    
+    .tech-item img {
+        height: 60px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .team-members {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+    }
+    
+    .back-button {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.5rem 1rem;
+        background: #2c3e50;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    
+    .back-button:hover {
+        background: #1a252f;
+    }
+</style>
+
 {% endblock %}

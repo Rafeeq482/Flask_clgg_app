@@ -3,10 +3,147 @@
 {% block title %}TalkDoc - Project Details{% endblock %}
 
 {% block content %}
-<h1>TalkDoc - Medical Chatbot</h1>
+<h1>TalkDoc - AI Medical Assistant Chatbot</h1>
 <img src="{{ url_for('static', filename='images/talkdoc.png') }}" alt="TalkDoc" class="project-image">
+
+<h2>Overview</h2>
 <p>
-    TalkDoc is an AI-powered medical chatbot designed to assist users with basic healthcare needs. It can provide symptom checking, health suggestions, and general wellness information. The chatbot uses speech recognition, natural language processing, and is built with Python and Flask.
+TalkDoc is an AI-powered web application that serves as a medical assistant chatbot. By utilizing speech recognition and natural language processing (NLP), the tool allows users to describe their symptoms via speech and receive potential over-the-counter medication recommendations and health advice. Developed using Streamlit and powered by Azure Cognitive Services and OpenAI GPT-3, TalkDoc offers a multilingual, intuitive, and efficient experience for healthcare self-assistance.
 </p>
-<a href="{{ url_for('projects') }}">← Back to Projects</a>
+
+<h2>Key Features</h2>
+<ul>
+  <li><strong>Speech-to-Text:</strong> Converts user speech into text using Azure’s Speech SDK.</li>
+  <li><strong>AI-Powered Medical Advice:</strong> Utilizes OpenAI GPT-3 via Azure to generate relevant and accurate health advice based on symptoms.</li>
+  <li><strong>User-Friendly Interface:</strong> Built with Streamlit, offering a clean, responsive, and multilingual interface.</li>
+  <li><strong>Real-Time Interaction:</strong> Fast processing and response for near-instant medical suggestions.</li>
+  <li><strong>Multilingual Support:</strong> Supports English, Hindi, Spanish, French, Russian, and Japanese.</li>
+</ul>
+
+<h2>Technical Stack</h2>
+<ul>
+  <li><strong>Frontend:</strong> Streamlit</li>
+  <li><strong>Backend:</strong> Azure OpenAI API, AssemblyAI</li>
+  <li><strong>Programming Language:</strong> Python</li>
+  <li><strong>APIs:</strong> Azure Cognitive Services Speech API, OpenAI GPT-3</li>
+</ul>
+
+<h2>How It Works</h2>
+<ol>
+  <li>The user clicks “Say Symptoms” to record their voice input.</li>
+  <li>Speech is transcribed using Azure's Speech SDK.</li>
+  <li>The transcribed text is processed and sent to OpenAI’s model via a prompt.</li>
+  <li>OpenAI generates contextual medical advice based on the provided symptoms.</li>
+  <li>The response is displayed in a user-friendly format.</li>
+</ol>
+
+<h2>System Design & Testing</h2>
+<p>The system was built with robust error handling, efficient API integration, and clear UI components. It underwent unit, integration, system, and user acceptance testing. Testing confirmed functionality, performance under load, and responsiveness to various language inputs.</p>
+
+<h2>Results & Discussion</h2>
+<ul>
+  <li><strong>Speech Recognition:</strong> High accuracy, with some variation across languages. Noise interference remains a challenge.</li>
+  <li><strong>Medical Advice:</strong> Relevance and coherence were consistently rated high by testers. Suggestions were contextually appropriate and easy to understand.</li>
+  <li><strong>Interface Usability:</strong> Users found the layout intuitive and responsive, with special praise for the multilingual functionality.</li>
+</ul>
+
+<h2>Challenges & Improvements</h2>
+<ul>
+  <li>Enhancing recognition accuracy in noisy environments.</li>
+  <li>Expanding the medical advice database for deeper context.</li>
+  <li>Adding user profile support for personalized health tracking and history-based advice.</li>
+</ul>
+
+<h2>Future Directions</h2>
+<p>
+Plans for TalkDoc include integrating a comprehensive medical database, improving background noise handling, and introducing personalized user experiences. Additionally, the team aims to refine its prompt engineering for more detailed and specific advice across medical conditions.
+</p>
+
+<h2>Team & Acknowledgments</h2>
+<p>
+Developed by Harshit Rai, Roshni Jha, Mohd Rafeeq, and Sachin Kumar under the guidance of Ms. Rashika. The team expresses gratitude to Aravali College of Engineering and Management for resources and support, and to Azure and OpenAI for the technologies that made this project possible.
+</p>
+
+<h2>References</h2>
+<ul>
+  <li><a href="https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/">Azure Cognitive Services Speech API</a></li>
+  <li><a href="https://beta.openai.com/docs/">OpenAI GPT-3 API Documentation</a></li>
+  <li><a href="https://docs.streamlit.io/">Streamlit Documentation</a></li>
+</ul>
+
+<a href="{{ url_for('projects') }}" class="back-button">← Back to Projects</a>
+
+
+
+<style>
+    .project-detail-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    .project-image {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+    }
+    
+    .project-section {
+        margin-bottom: 3rem;
+    }
+    
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .category-card {
+        background: #f5f5f5;
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #2c3e50;
+    }
+    
+    .tech-stack {
+        display: flex;
+        gap: 2rem;
+        margin: 1.5rem 0;
+    }
+    
+    .tech-item {
+        text-align: center;
+    }
+    
+    .tech-item img {
+        height: 60px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .team-members {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin: 1rem 0;
+    }
+    
+    .back-button {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 0.5rem 1rem;
+        background: #2c3e50;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+    
+    .back-button:hover {
+        background: #1a252f;
+    }
+</style>
 {% endblock %}
+
+
